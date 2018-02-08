@@ -50,7 +50,7 @@ bot.on('message', function(message) {
             message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
             break;
         default:
-            message.channel.sendMessage("Invalid Command");
+            message.channel.sendMessage("");
 
     }
 });

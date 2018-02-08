@@ -1,15 +1,7 @@
 const Discord = require('discord.js');
 const config = require('./config.json');
 const bot = new Discord.Client();
-const { prefix, token, fortunes, swear } = require('./config.json');
-
-bot.on('message', message => {
-    if (message.author.equals(bot.user)) return;
-
-    if (message.content == "wtf", "stfu", "kys", "fuck you", "fuck", "shit", "bullshit", "ass", "kms") {
-        message.channel.sendMessage(swear[Math.floor(Math.random() * swear.length)]);
-    }
-});
+const { prefix, token, fortunes, swear, swearwords } = require('./config.json');
 
 bot.on('ready', () => {
     console.log("READY!"), bot.user.setGame('Doki Doki Literature Club');
@@ -63,4 +55,4 @@ bot.on('message', function(message) {
     }
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(token);

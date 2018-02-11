@@ -55,4 +55,14 @@ bot.on('message', function(message) {
     }
 });
 
+bot.on('message', message => {
+    if (message.author.equals(bot.user)) return;
+
+    var args = message.content.substring(prefix.length).split(" ");
+
+    if (message.content == swearwords.toLowercase()) {
+        message.channel.sendMessage(swear[Math.floor(Math.random() * swear.length)]);
+    }
+});
+
 bot.login(process.env.BOT_TOKEN);
